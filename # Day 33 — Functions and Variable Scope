@@ -1,0 +1,51 @@
+# Activity 1: Functions and scope
+#def greet():
+    #message = "Hello from inside the function!"
+    #return message
+
+#result = greet()
+#print(result)       # Works fine
+
+# Activity 2: Global VS lOCAL Variables
+#message = "Hello from the global scope!"
+
+#def greet():
+    #message = "Hello from inside the function!"
+    #return message
+
+#print(greet())  # Local version
+#print(message)  # Global version
+
+# Activity 3: Using the global keyword
+#count = 0 # global variable
+
+#def increase():
+    #global count # tells Python to use the global variable
+   #count += 1
+    #return count
+
+#print(increase())  # 1
+#print(increase())  # 2
+#print(count)       #2
+
+# Activity 4: Function Scope vs Global Scope
+#status = "Global status"
+
+#def show_status():
+    #status = "Local status"
+    #return status
+
+##print(show_status())  # Local version
+##print(status)         # Global version
+
+# Activity 5: Combining Scope with Returns
+score = 50 # global variable
+
+def update_score(points):
+    global score # tells Python to use the global variable
+    score += points
+    local_message = f"Score updated to {score}"
+    return local_message
+
+print(update_score(10))  # returns local message
+print(score)              # prints updated global score
