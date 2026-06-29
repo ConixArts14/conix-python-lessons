@@ -39,13 +39,13 @@
 ##print(status)         # Global version
 
 # Activity 5: Combining Scope with Returns
-score = 50 # global variable
+#score = 50 # global variable
 
-def update_score(points):
-    global score # tells Python to use the global variable
-    score += points
-    local_message = f"Score updated to {score}"
-    return local_message
+#def update_score(points):
+    #global score # tells Python to use the global variable
+    #score += points
+    #local_message = f"Score updated to {score}"
+    ##return local_message
 
-print(update_score(10))  # returns local message
-print(score)              # prints updated global score
+#print(update_score(10))  # returns local message
+#print(score)              # prints updated global score
