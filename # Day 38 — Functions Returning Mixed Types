@@ -1,0 +1,49 @@
+#def quick_report(name, scores):
+    #average = sum(scores) / len(scores)
+    #passed = average >= 75
+    #return name, average, passed
+
+# Test
+#report = quick_report("Conix", [85, 90, 78, 88])
+#print(report)          # whole tuple
+#print(report[0])       # name
+#print(report[1])       # average
+#print(report[2])       # pass/fail
+
+#def labeled_report(name, scores):
+    #average = sum(scores) / len(scores)
+    #passed = average >= 75
+    #return {
+        #"Name": name,
+        #"Average": average,
+        #"Passed": passed
+    }
+
+# Test
+#report = labeled_report("Leonald", [70, 65, 80, 72])
+#print(report)              # whole dictionary
+#print(report["Name"])      # access by key
+#print(report["Average"])
+#print(report["Passed"])
+
+def class_summary(database):
+    total_average = sum(report["Average"] for report in database) / len(database)
+    pass_count = sum(1 for report in database if report["Grade"] == "Pass")
+    fail_count = len(database) - pass_count
+    return {
+        "Class Average": total_average,
+        "Pass Count": pass_count,
+        "Fail Count": fail_count
+    }
+
+# Example usage
+students = {
+    "Conix": [85, 90, 78, 88],
+    "Leonald": [70, 65, 80, 72],
+    "Alex": [95, 92, 89, 96]
+}
+
+database = [detailed_report(name, scores) for name, scores in students.items()]
+summary = class_summary(database)
+print(summary)
+
