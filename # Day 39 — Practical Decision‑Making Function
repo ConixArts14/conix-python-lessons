@@ -1,0 +1,81 @@
+def eligibility_report(name, scores, attendance):
+    average = sum(scores) / len(scores)
+    status = "Eligible" if average >= 75 and attendance >= 80 else "Not Eligible"
+    return {
+        "Name": name,
+        "Average": average,
+        "Attendance": attendance,
+        "Status": status
+    }
+
+# Test
+report1 = eligibility_report("Conix", [85, 90, 78, 88], 85)
+report2 = eligibility_report("Leonald", [70, 65, 80, 72], 75)
+
+print(report1)
+print(report2)
+
+def multi_condition_report(name, scores, attendance):
+    average = sum(scores) / len(scores)
+    if average >= 90 and attendance >= 90:
+        status = "Honors"
+    elif average >= 75 and attendance >= 80:
+        status = "Eligible"
+    elif average >= 60 and attendance < 80:
+        status = "Probation"
+    else:
+        status = "Not Eligible"
+    return {
+        "Name": name,
+        "Average": average,
+        "Attendance": attendance,
+        "Status": status
+    }
+
+# Test
+print(multi_condition_report("Conix", [95, 92, 89, 96], 92))
+print(multi_condition_report("Leonald", [70, 65, 80, 72], 75))
+print(multi_condition_report("Alex", [62, 60, 65, 58], 70))
+
+def class_status(students):
+    reports = []
+    for name, data in students.items():
+        scores, attendance = data
+        reports.append(multi_condition_report(name, scores, attendance))
+    return reports
+
+# Example usage
+students = {
+    "Conix": ([95, 92, 89, 96, 91], 92),
+    "Leonald": ([70, 65, 80, 72], 75),
+    "Alex": ([62, 66, 65, 58], 70)
+}
+
+database = class_status(students)
+for report in database:
+    print(report)
+
+def class_summary(database):
+    total_average = sum(report["Average"] for report in database) / len(database)
+    honors_count = sum(1 for report in database if report["Status"] == "Honors")
+    eligible_count = sum(1 for report in database if report["Status"] == "Eligible")
+    probation_count = sum(1 for report in database if report["Status"] == "Probation")
+    not_eligible_count = sum(1 for report in database if report["Status"] == "Not Eligible")
+    return {
+        "Class Average": total_average,
+        "Honors Count": honors_count,
+        "Eligible Count": eligible_count,
+        "Probation Count": probation_count,
+        "Not Eligible Count": not_eligible_count
+    }
+
+# Example usage
+students = {
+    "Conix": ([95, 92, 89, 96], 92),
+    "Leonald": ([70, 65, 80, 72], 75),
+    "Alex": ([62, 66, 65, 58], 70)
+}
+
+database = class_status(students)
+summary = class_summary(database)
+print(summary)
