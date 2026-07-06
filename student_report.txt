@@ -1,0 +1,1 @@
+{'Name': 'Conix', 'Average': 85.25, 'Attendance': 85, 'Status': 'Eligible'}
