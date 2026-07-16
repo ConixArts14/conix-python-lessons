@@ -1,0 +1,14 @@
+=== Status Summary Report ===
+
+--- Honors Leaderboard ---
+1. Conix | Average: 93 | Attendance: 92 | Status: Honors
+2. Conix | Average: 93 | Attendance: 92 | Status: Honors
+
+--- Improved Leaderboard ---
+1. Leonald | Average: 71.75 | Attendance: 75 | Status: Improved
+
+--- Eligible Leaderboard ---
+1. Maya | Average: 88.5 | Attendance: 90 | Status: Eligible
+2. Maya | Average: 88.5 | Attendance: 90 | Status: Eligible
+3. Maya | Average: 88.5 | Attendance: 90 | Status: Eligible
+
