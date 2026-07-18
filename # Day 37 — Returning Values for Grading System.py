@@ -64,33 +64,34 @@
 #print(report["Average"])
 #print(report["Grade"])
 
-def student_report(name, scores):
-    total = sum(scores)
-    average = total / len(scores)
-    grade = "Pass" if average >= 75 else "Fail"
-    return {
-        "Name": name,
-        "Total": total,
-        "Average": average,
-        "Grade": grade
+#def student_report(name, scores):
+    #total = sum(scores)
+    #average = total / len(scores)
+    #grade = "Pass" if average >= 75 else "Fail"
+    #return {
+        #"Name": name,
+        #"Total": total,
+        #"Average": average,
+        #"Grade": grade
     }
 
-def class_database(students):
-    reports = []
-    for name, scores in students.items():
-        reports.append(student_report(name, scores))
-    return reports
+#def class_database(students):
+    #reports = []
+    #for name, scores in students.items():
+        #reports.append(student_report(name, scores))
+    #return reports
 
 # Sample data
-students = {
-    "Conix": [85, 90, 78, 88],
-    "Leonald": [70, 65, 80, 72],
-    "Alex": [95, 92, 89, 96]
+#students = {
+    #"Conix": [85, 90, 78, 88],
+    #"Leonald": [70, 65, 80, 72],
+    #"Alex": [95, 92, 89, 96]
 }
 
 # Generate database
-database = class_database(students)
+#database = class_database(students)
 
 # Print each student’s report
-for report in database:
-    print(report)
+#for report in database:
+    #
+    # print(report)

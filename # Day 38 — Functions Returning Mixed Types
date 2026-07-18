@@ -26,24 +26,24 @@
 #print(report["Average"])
 #print(report["Passed"])
 
-def class_summary(database):
-    total_average = sum(report["Average"] for report in database) / len(database)
-    pass_count = sum(1 for report in database if report["Grade"] == "Pass")
-    fail_count = len(database) - pass_count
-    return {
-        "Class Average": total_average,
-        "Pass Count": pass_count,
-        "Fail Count": fail_count
+#def class_summary(database):
+    #total_average = sum(report["Average"] for report in database) / len(database)
+    #pass_count = sum(1 for report in database if report["Grade"] == "Pass")
+    #fail_count = len(database) - pass_count
+    #return {
+        #"Class Average": total_average,
+        #"Pass Count": pass_count,
+        #"Fail Count": fail_count
     }
 
 # Example usage
-students = {
-    "Conix": [85, 90, 78, 88],
-    "Leonald": [70, 65, 80, 72],
-    "Alex": [95, 92, 89, 96]
+#students = {
+    #"Conix": [85, 90, 78, 88],
+    #"Leonald": [70, 65, 80, 72],
+    #"Alex": [95, 92, 89, 96]
 }
 
-database = [detailed_report(name, scores) for name, scores in students.items()]
-summary = class_summary(database)
-print(summary)
+#database = [detailed_report(name, scores) for name, scores in students.items()]
+#summary = class_summary(database)
+#print(summary)
 

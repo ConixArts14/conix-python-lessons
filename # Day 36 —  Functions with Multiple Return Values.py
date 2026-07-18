@@ -58,13 +58,13 @@ def exam_report(scores):
     return total, average, extremes, passed
 
 # Calling the function
-report = exam_report([80, 90, 70, 85])
-print(report)
+#report = exam_report([80, 90, 70, 85])
+#print(report)
 # prints: (325, 81.25, (70, 90), True)
 
 # Unpacking
-total, average, extremes, passed = exam_report([80, 90, 70, 85])
-print("Total:", total)
-print("Average:", average)
-print("Lowest/Highest:", extremes)
-print("Passed:", passed)
+#total, average, extremes, passed = exam_report([80, 90, 70, 85])
+#print("Total:", total)
+#print("Average:", average)
+#print("Lowest/Highest:", extremes)
+#print("Passed:", passed)
