@@ -1,0 +1,3 @@
+Hello, this is my first text file!
+Day 62 Activity 1 complete.
+Adding another line at the end.
