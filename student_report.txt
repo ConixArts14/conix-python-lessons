@@ -1,1 +1,3 @@
-{'Name': 'Conix', 'Average': 85.25, 'Attendance': 85, 'Status': 'Eligible'}
+Name: Conix, Age: 10, City: Tagum
+Name: Leonald, Age: 18, City: Davao
+Name: Aeg, Age: 15, City: Manila
