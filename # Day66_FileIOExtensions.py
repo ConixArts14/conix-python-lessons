@@ -63,8 +63,6 @@ while True:
     else:
         print("⚠️ Invalid choice. Please enter 1–6.")
 
-
-7. Export All Formats
 elif choice == "7":
     # Export to Text
     with open("student_report.txt", "w") as file:
