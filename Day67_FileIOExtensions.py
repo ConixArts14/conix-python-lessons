@@ -42,3 +42,25 @@ elif choice == "9":
 
     except FileNotFoundError:
         print("⚠️ No JSON report found. Please export first.")
+
+
+10. Delete Student Record
+elif choice == "10":
+    import json
+    try:
+        with open("student_report.json", "r") as file:
+            data = json.load(file)
+
+        name_to_delete = input("Enter the name of the student to delete: ").strip()
+
+        new_data = [student for student in data if student["Name"].lower() != name_to_delete.lower()]
+
+        if len(new_data) < len(data):
+            with open("student_report.json", "w") as file:
+                json.dump(new_data, file, indent=4)
+            print(f"🗑️ Record for {name_to_delete} deleted successfully.")
+        else:
+            print("⚠️ Student not found in report.")
+
+    except FileNotFoundError:
+        print("⚠️ No JSON report found. Please export first.")
