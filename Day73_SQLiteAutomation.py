@@ -86,3 +86,31 @@ def auto_grade_distribution():
         print(f"{label}: {count} student(s)")
 
     conn.close()
+
+def auto_top_students(n=3):  # default to Top 3
+    conn = sqlite3.connect("student_records.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT name, grade FROM students ORDER BY grade DESC LIMIT ?", (n,))
+    top_list = cursor.fetchall()
+    conn.close()
+
+    print(f"\n🏆 Top {n} Students:")
+    if top_list:
+        for i, (name, grade) in enumerate(top_list, start=1):
+            print(f"{i}. {name} - {grade}")
+    else:
+        print("⚠️ No students found.")
+
+def auto_failing_students():
+    conn = sqlite3.connect("student_records.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT name, grade FROM students WHERE grade < 60")
+    fails = cursor.fetchall()
+    conn.close()
+
+    print("\n⚠️ Failing Students (grade < 60):")
+    if fails:
+        for name, grade in fails:
+            print(f"{name} - {grade}")
+    else:
+        print("✅ No failing students found.")

@@ -61,3 +61,20 @@ def group_by_subject():
     print("\n📊 Average Grade per Subject:")
     for subject, avg in results:
         print(f"{subject}: {avg:.2f}")
+
+def complex_reports():
+    conn = sqlite3.connect("student_records.db")
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT students.name, subjects.subject, AVG(subjects.grade)
+        FROM students
+        INNER JOIN subjects ON students.id = subjects.student_id
+        GROUP BY students.name, subjects.subject
+        HAVING AVG(subjects.grade) >= 85
+    """)
+    results = cursor.fetchall()
+    conn.close()
+
+    print("\n🏆 Complex Report — High Performers by Subject:")
+    for name, subject, avg in results:
+        print(f"{name} - {subject}: {avg:.2f}")
