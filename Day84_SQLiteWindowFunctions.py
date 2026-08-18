@@ -56,3 +56,24 @@ def dense_rank_students():
     conn.close()
 
 dense_rank_students()
+
+def combined_window_functions():
+    conn = sqlite3.connect("student_records.db")
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        SELECT s.name, sub.subject, sub.grade,
+               ROW_NUMBER() OVER (ORDER BY sub.grade DESC) AS row_num,
+               RANK() OVER (ORDER BY sub.grade DESC) AS rank_pos,
+               DENSE_RANK() OVER (ORDER BY sub.grade DESC) AS dense_rank_pos
+        FROM students s
+        JOIN subjects sub ON s.id = sub.student_id
+    """)
+
+    print("\n📊 Students Ranked by Grade (ROW_NUMBER, RANK, DENSE_RANK):")
+    for row in cursor.fetchall():
+        print(f"RowNum {row[3]} | Rank {row[4]} | DenseRank {row[5]} | {row[0]} | Subject: {row[1]} | Grade: {row[2]}")
+
+    conn.close()
+
+combined_window_functions()
