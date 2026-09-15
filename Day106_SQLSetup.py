@@ -1,28 +1,10 @@
 import sqlite3
 
-# 1. Open connection
+# Connect to database (creates file if missing)
 conn = sqlite3.connect("student_records.db")
 cursor = conn.cursor()
 
-# 2. Create student_report table
-cursor.execute("""
-CREATE TABLE IF NOT EXISTS student_report (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT,
-    section TEXT
-)
-""")
-
-cursor.executemany("""
-INSERT INTO student_report (name, section) VALUES (?, ?)
-""", [
-    ("Alice", "A"),
-    ("Bob", "A"),
-    ("Charlie", "B"),
-    ("Diana", "B")
-])
-
-# 3. Create exams table
+# Create exams table
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS exams (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -31,11 +13,20 @@ CREATE TABLE IF NOT EXISTS exams (
 )
 """)
 
-cursor.executemany("""
-INSERT INTO exams (subject, grade) VALUES (?, ?)
-""", [
+# Insert sample data
+cursor.executemany("INSERT INTO exams (subject, grade) VALUES (?, ?)", [
     ("Math", 95),
-    ("English", 88),
     ("Science", 92),
+    ("English", 88),
     ("History", 85)
 ])
+
+conn.commit()
+conn.close()
+
+print("✅ Exams table created with sample data.")
+
+SUM(grade) OVER (
+  ORDER BY grade
+  ROWS BETWEEN 2 PRECEDING AND CURRENT ROW
+)
