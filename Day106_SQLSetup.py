@@ -26,7 +26,9 @@ conn.close()
 
 print("✅ Exams table created with sample data.")
 
-SUM(grade) OVER (
-  ORDER BY grade
-  ROWS BETWEEN 2 PRECEDING AND CURRENT ROW
-)
+import sqlite3
+conn = sqlite3.connect("student_records.db")
+cursor = conn.cursor()
+cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+print(cursor.fetchall())
+conn.close()
