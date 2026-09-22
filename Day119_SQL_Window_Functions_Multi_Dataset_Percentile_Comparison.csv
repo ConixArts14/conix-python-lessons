@@ -1,0 +1,6 @@
+subject,grade,rank,dense_rank,row_num,percentile
+Math,95,1,1,1,1.0
+Science,92,2,2,2,0.8
+English,88,4,4,3,0.4
+History,85,5,5,4,0.2
+PE,90,3,3,5,0.6
