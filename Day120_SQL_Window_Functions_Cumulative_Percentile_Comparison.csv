@@ -1,0 +1,7 @@
+subject,grade,rank,dense_rank,row_num,percentile,cumulative_avg
+Math,95,1,1,1,1.0,95.0
+Science,92,2,2,2,0.83,93.5
+English,88,4,4,3,0.5,91.67
+History,85,6,6,4,0.17,90.0
+PE,90,3,3,5,0.67,90.0
+Art,87,5,5,6,0.33,89.5
