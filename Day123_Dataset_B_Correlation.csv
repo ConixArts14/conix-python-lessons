@@ -1,0 +1,5 @@
+subject,grade,rank,percentile,cumulative_avg,moving_avg
+PE,90,2,0.75,90.0,
+Art,87,4,0.25,88.5,88.5
+Music,93,1,1.0,90.0,90.0
+ICT,89,3,0.5,89.75,91.0

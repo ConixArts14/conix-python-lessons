@@ -1,0 +1,5 @@
+subject,grade,rank,percentile,cumulative_avg,moving_avg
+Math,95,1,1.0,95.0,
+Science,92,2,0.75,93.5,93.5
+English,88,3,0.5,91.67,90.0
+History,85,4,0.25,90.0,86.5
