@@ -228,3 +228,5 @@ async def get_runners_with_workouts(db: AsyncSession = Depends(get_db)):
     stmt = select(RunnerORM).options(selectinload(RunnerORM.workouts))
     result = await db.execute(stmt)
     return result.scalars().all()
+
+    
