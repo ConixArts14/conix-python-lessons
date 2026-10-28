@@ -60,7 +60,7 @@ while True:
             file.write(f"Cities Represented: {', '.join(cities)}\n")
         print("Detailed summary saved to student_detailed_summary.txt")
 
-    else:
+   sqlalchemy.url = sqlite:///./runner_app.db
         print("⚠️ Invalid choice. Please enter 1–6.")
 
 elif choice == "7":
