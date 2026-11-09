@@ -1,2 +1,4 @@
 student_records.db
 *.db
+
+.env
