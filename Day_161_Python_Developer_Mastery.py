@@ -194,4 +194,4 @@ def login_user(credentials: UserLogin, db: Session = Depends(get_db)):
 
 @app.get("/")
 def root():
-    return {"message": "Welcome to Day 161 Password Hashing & Login API!"}
+    return {"message": "Welcome to Day 161 Password Hashing & Login API!"} 
